@@ -1,6 +1,6 @@
 # cisco-interface-health
 
-[![ci](https://github.com/a-ayrapetov/cisco-interface-health/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/cisco-interface-health/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/cisco-interface-health)](https://pypi.org/project/cisco-interface-health/)
+[![ci](https://github.com/a-ayrapetov/cisco-interface-health/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/cisco-interface-health/actions/workflows/ci.yml)
 
 Offline triage of Cisco IOS / IOS-XE `show interfaces` output. Paste the output from one switch or fifty and get a ranked list of the ports that need attention, with the likely cause and the next step.
 
@@ -24,7 +24,7 @@ Pure text parsing with the Python standard library. It never connects to a devic
 ## Install
 
 ```bash
-pip install cisco-interface-health
+pip install git+https://github.com/a-ayrapetov/cisco-interface-health
 ```
 
 This installs an `ifhealth` command. You can also run `python ifhealth.py` straight from a clone.
