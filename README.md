@@ -4,6 +4,20 @@
 
 Offline triage of Cisco IOS / IOS-XE `show interfaces` output. Paste the output from one switch or fifty and get a ranked list of the ports that need attention, with the likely cause and the next step.
 
+## When to run it
+
+```mermaid
+flowchart LR
+  R(["Slow network<br/>or a flapping port"]) --> C[Collect show interfaces,<br/>one switch or fifty] --> T[Run ifhealth] --> D1{DP 1}
+  D1 -->|critical| K[err-disabled, CRC, duplex:<br/>fix cabling and port<br/>settings first]
+  D1 -->|warning| W[Drops, runts, resets:<br/>check load, QoS and MTU]
+  D1 -->|clean| U([Ports are clean:<br/>look above layer 2])
+
+  style R fill:#1f6feb,color:#fff,stroke:none
+  style D1 fill:#6e40c9,color:#fff,stroke:none
+  style U fill:#1a7f37,color:#fff,stroke:none
+```
+
 ## What it flags
 
 | Finding | Severity | Typical cause |
